@@ -16,6 +16,7 @@ void VictronSmartShuntComponent::dump_config() {
   LOG_SENSOR("  ", "Panel Voltage", panel_voltage_sensor_);
   LOG_SENSOR("  ", "Panel Power", panel_power_sensor_);
   LOG_SENSOR("  ", "Battery Voltage", battery_voltage_sensor_);
+  LOG_SENSOR("  ", "Auxiliary Voltage", auxiliary_voltage_sensor_);
   LOG_SENSOR("  ", "Battery Current", battery_current_sensor_);
   LOG_SENSOR("  ", "Load Current", load_current_sensor_);
   LOG_SENSOR("  ", "Day Number", day_number_sensor_);
