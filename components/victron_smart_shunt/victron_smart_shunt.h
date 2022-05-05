@@ -114,6 +114,7 @@ class VictronSmartShuntComponent : public uart::UARTDevice, public Component {
   sensor::Sensor *panel_voltage_sensor_{nullptr};
   sensor::Sensor *panel_power_sensor_{nullptr};
   sensor::Sensor *battery_voltage_sensor_{nullptr};
+  sensor::Sensor *auxiliary_voltage_sensor_{nullptr};
   sensor::Sensor *battery_current_sensor_{nullptr};
   sensor::Sensor *load_current_sensor_{nullptr};
   sensor::Sensor *day_number_sensor_{nullptr};
