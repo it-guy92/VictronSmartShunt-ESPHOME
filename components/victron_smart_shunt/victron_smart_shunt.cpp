@@ -449,6 +449,9 @@ void VictronSmartShuntComponent::handle_value_() {
   } else if (label_ == "V") {
     if (battery_voltage_sensor_ != nullptr)
       battery_voltage_sensor_->publish_state(atoi(value_.c_str()) / 1000.0);  // NOLINT(cert-err34-c)
+  } else if (label_ == "VS") {
+    if (auxiliary_voltage_sensor_ != nullptr)
+      auxiliary_voltage_sensor_->publish_state(atoi(value_.c_str()) / 1000.0);  // NOLINT(cert-err34-c)
   } else if (label_ == "I") {
     if (battery_current_sensor_ != nullptr)
       battery_current_sensor_->publish_state(atoi(value_.c_str()) / 1000.0);  // NOLINT(cert-err34-c)
