@@ -3,6 +3,7 @@ import esphome.config_validation as cv
 from esphome.components import sensor, text_sensor
 from esphome.const import (
     CONF_BATTERY_VOLTAGE,
+    CONF_AUXILIARY_VOLTAGE,
     CONF_ID,
     DEVICE_CLASS_CURRENT,
     DEVICE_CLASS_EMPTY,
