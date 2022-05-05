@@ -116,6 +116,12 @@ CONFIG_SCHEMA = cv.Schema(
             icon=ICON_FLASH,
             accuracy_decimals=3,
             device_class=DEVICE_CLASS_VOLTAGE,
+        ),        
+        cv.Optional(CONF_AUXILIARY_VOLTAGE): sensor.sensor_schema(
+            unit_of_measurement=UNIT_VOLT,
+            icon=ICON_FLASH,
+            accuracy_decimals=3,
+            device_class=DEVICE_CLASS_VOLTAGE,
         ),
         cv.Optional(CONF_BATTERY_CURRENT): sensor.sensor_schema(
             unit_of_measurement=UNIT_AMPERE,
@@ -293,6 +299,10 @@ def to_code(config):
     if CONF_BATTERY_VOLTAGE in config:
         sens = yield sensor.new_sensor(config[CONF_BATTERY_VOLTAGE])
         cg.add(var.set_battery_voltage_sensor(sens))
+        
+    if CONF_AUXILIARY_VOLTAGE in config:
+        sens = yield sensor.new_sensor(config[CONF_AUXILIARY_VOLTAGE])
+        cg.add(var.set_auxiliary_voltage_sensor(sens))
 
     if CONF_BATTERY_CURRENT in config:
         sens = yield sensor.new_sensor(config[CONF_BATTERY_CURRENT])
